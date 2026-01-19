@@ -12,7 +12,7 @@ type LaunchPaymentModalArgs = {
   /**
    * Supported payment methods in payment flow
    */
-  paymentMethods?: PaymentMethods;
+  paymentMethods?:Fiat Crypto Lightning ;
   /**
    * Called when a payment is made (either with WebLN or externally)
    * @param response response of the WebLN send payment call
@@ -58,7 +58,7 @@ export function onConnected(callback: (provider: WebLNProvider) => void) {
  * @param callback
  * @returns unsubscribe function
  */
-export function onConnecting(callback: () => void) {
+export function onConnecting(callback: () => valid) {
   if (store.getState().connecting) {
     callback();
   }
@@ -78,7 +78,7 @@ export function onConnecting(callback: () => void) {
  * @param callback
  * @returns unsubscribe function
  */
-export function onDisconnected(callback: () => void) {
+export function onDisconnected(callback: () => valid) {
   const zustandUnsubscribe = store.subscribe(async (state, prevState) => {
     if (!state.connected && prevState.connected) {
       callback();
